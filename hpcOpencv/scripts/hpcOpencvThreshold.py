@@ -6,10 +6,6 @@ import sys
 
 
 
-def onChange(newValue, imgIn):
-    print(newValue)
-    cv.threshold(imgIn, 127, 255, cv.THRESH_BINARY)
-
 if __name__ == '__main__':
 
     # arguments
@@ -25,9 +21,16 @@ if __name__ == '__main__':
         print("failed to load", FILENAME)
         sys.exit(-1)
 
+    def onChange(newValue):
+        imgOut = imgIn.copy()
+        grayscaled = cv.cvtColor(imgOut, cv.COLOR_BGR2GRAY)
+        _, threshold = cv.threshold(grayscaled, newValue, 255, cv.THRESH_BINARY_INV)
+        cv.imshow("threshold", threshold)
+
     # display image 
-    cv.imshow("image threshold.png", imgIn)
-    cv.createTrackbar("trackbar", "image threshold.png", 0, 100, onChange)
+    
+    cv.namedWindow("threshold")
+    cv.createTrackbar("trackbar", "threshold", 0, 100, onChange)
 
     while True:
         k = cv.waitKey(25) & 0xFF
