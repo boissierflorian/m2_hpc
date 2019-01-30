@@ -1,0 +1,15 @@
+cpp/Image.cpp
+cpp/Integral.cpp
+cpp/Wrapper.cpp
+hpcMpi.egg-info/PKG-INFO
+hpcMpi.egg-info/SOURCES.txt
+hpcMpi.egg-info/dependency_links.txt
+hpcMpi.egg-info/top_level.txt
+scripts/hpcMpiHello1.py
+scripts/hpcMpiHello2.py
+scripts/hpcMpiImageRun.sh
+scripts/hpcMpiImageSeq.py
+scripts/hpcMpiIntegralPar.py
+scripts/hpcMpiIntegralRun.sh
+scripts/hpcMpiIntegralSeq.py
+scripts/hpcMpiPlot.py
